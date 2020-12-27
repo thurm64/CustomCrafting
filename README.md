@@ -6,6 +6,8 @@ Also, there are commands for modifying items to make them have different names, 
 ```/customcrafts``` 
 
 Opens custom craft GUI.
+## Item modification
+These commands will modify the item in your hand.
 
 ```/ccrename <name>```
 
