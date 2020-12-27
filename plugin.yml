@@ -1,0 +1,25 @@
+name: CustomCrafting
+version: 1.0.0
+api: 3
+author: thurm64
+main: thurm64\CustomCrafting\CustomCrafting
+load: STARTUP
+commands:
+  customcrafts:
+    description: "Open custom craft GUI"
+  ccrelore:
+    description: "Change item in hand's lore. {line} for newline."
+    usage: "/ccrelore <lore>"
+  ccrename:
+    description: "Change item in hand's name."
+    usage: "/ccrename <name>"
+  ccglowify:
+    description: "Make item in hand shiny."
+    usage: "/ccglowify"
+  ccrecolor: 
+    description: "Recolor a dyeable item."
+    usage: "/ccrecolor <red: 0-255> <green: 0-255> <blue: 0-255>"
+permissions:
+  customcrafts.command:
+    description: Permission for all commands.
+    default: op
