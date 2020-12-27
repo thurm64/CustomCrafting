@@ -44,7 +44,7 @@ class CustomCrafting extends PluginBase implements Listener {
         
     }
     public function onCommand(\pocketmine\command\CommandSender $player, \pocketmine\command\Command $c, string $l, array $a) : bool {
-        if($player->hasPermission("customcrafts.command")) {
+        if($player->hasPermission("customcrafting.command")) {
 
             if($c->getName() == "ccrename" && count($a) == 1) {
                 $player->getInventory()->setItemInHand($player->getInventory()->getItemInHand()->setCustomName($a[0]));
