@@ -20,6 +20,6 @@ commands:
     description: "Recolor a dyeable item."
     usage: "/ccrecolor <red: 0-255> <green: 0-255> <blue: 0-255>"
 permissions:
-  customcrafts.command:
+  customcrafting.command:
     description: Permission for all commands.
     default: op
