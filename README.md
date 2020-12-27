@@ -3,7 +3,7 @@ This plugin has a graphical interface for creating crafting recipes.
 You will need to restart the server for new recipes to take effect.
 Also, there are commands for modifying items to make them have different names, etc.
 
-```/customcrafts:``` 
+```/customcrafts``` 
 
 Opens custom craft GUI.
 
