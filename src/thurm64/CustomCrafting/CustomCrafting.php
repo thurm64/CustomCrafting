@@ -24,7 +24,7 @@ class CustomCrafting extends PluginBase implements Listener {
     }
 
 	public function onEnable() {
-        $this->getLogger()->info("[CustomCrafts]" . " by thurm64§7!");
+        //$this->getLogger()->info("[CustomCrafts]" . " by thurm64§7!");  :(
         if(!file_exists($this->getDataFolder() . "config.yml")){
             @mkdir($this->getDataFolder());
             file_put_contents($this->getDataFolder()."config.yml", $this->getResource("config.yml"));
