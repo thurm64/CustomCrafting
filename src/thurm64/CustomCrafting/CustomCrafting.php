@@ -18,7 +18,6 @@ use muqsit\invmenu\InvMenu;
 use muqsit\invmenu\InvMenuHandler;
 use muqsit\invmenu\transaction\InvMenuTransaction;
 use muqsit\invmenu\transaction\InvMenuTransactionResult;
-
 class CustomCrafting extends PluginBase implements Listener {
     public function log($str) {
         $this->getLogger()->info("[CustomCrafts]" . $str);
@@ -60,7 +59,7 @@ class CustomCrafting extends PluginBase implements Listener {
                 return true;
             } else if($c->getName() == "ccrecolor" && count($a) == 3) {
                 $item = $player->getInventory()->getItemInHand();
-                if($item instanceof pocketmine\item\Armor) {
+                if($item instanceof Armor) {
                 $item->setCustomColor(new Color(intval($a[0]),intval($a[1]),intval($a[2])));
                 $player->getInventory()->setItemInHand($item);
                 return true;
