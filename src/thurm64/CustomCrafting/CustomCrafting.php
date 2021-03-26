@@ -38,13 +38,7 @@ class CustomCrafting extends PluginBase implements Listener {
 
 	public function onEnable() {
        
-        if(!file_exists($this->getDataFolder() . "config.yml")){
-            @mkdir($this->getDataFolder());
-            //memory leak -- this now is intended feature because idk how to fix it
-		file_put_contents($this->getDataFolder()."config.yml", $this->getResource("config.yml"));
-	    
-          }
-        $this->myConfig = new Config($this->getDataFolder() . "config.yml", Config::YAML);
+    	$this->saveDefaultConfig();
         if(!InvMenuHandler::isRegistered()){
             InvMenuHandler::register($this);
         }
