@@ -1,4 +1,17 @@
 <?php
+/*
+  _   _       _   _                                                        _ 
+ | \ | |     | | (_)                                                      (_)
+ |  \| | ___ | |_ _  ___ ___   _ __ ___   ___   ___  ___ _ __  _ __   __ _ _ 
+ | . ` |/ _ \| __| |/ __/ _ \ | '_ ` _ \ / _ \ / __|/ _ \ '_ \| '_ \ / _` | |
+ | |\  | (_) | |_| | (_|  __/ | | | | | |  __/ \__ \  __/ | | | |_) | (_| | |
+ |_| \_|\___/ \__|_|\___\___| |_| |_| |_|\___| |___/\___|_| |_| .__/ \__,_|_|
+                                                              | |            
+                                                              |_|         
+							      
+							      
+							     if you read this without context i am so incredibly sorry
+							      */
 declare(strict_types=1);
 namespace thurm64\CustomCrafting;
 use pocketmine\item\enchantment\Enchantment;
@@ -9,10 +22,11 @@ use pocketmine\event\Player\PlayerJoinEvent;
 use pocketmine\nbt\tag\ListTag;
 use pocketmine\event\Player\PlayerCommandPreprocessEvent;
 use pocketmine\item\Item;
+use pocketmine\block\BlockIds;
 use pocketmine\item\Armor;
 use pocketmine\utils\Config;
 use pocketmine\Player;
-use pocketmine\item\Color;
+use pocketmine\
 use pocketmine\inventory\ShapedRecipe;
 use muqsit\invmenu\InvMenu;
 use muqsit\invmenu\InvMenuHandler;
@@ -24,10 +38,12 @@ class CustomCrafting extends PluginBase implements Listener {
     }
 
 	public function onEnable() {
-        //$this->getLogger()->info("[CustomCrafts]" . " by thurm64§7!");  :(
+       
         if(!file_exists($this->getDataFolder() . "config.yml")){
             @mkdir($this->getDataFolder());
-            file_put_contents($this->getDataFolder()."config.yml", $this->getResource("config.yml"));
+            //memory leak -- this now is intended feature because idk how to fix it
+		file_put_contents($this->getDataFolder()."config.yml", $this->getResource("config.yml"));
+	    
           }
         $this->myConfig = new Config($this->getDataFolder() . "config.yml", Config::YAML);
         if(!InvMenuHandler::isRegistered()){
@@ -37,12 +53,7 @@ class CustomCrafting extends PluginBase implements Listener {
             $this->getServer()->getCraftingManager()->registerRecipe(unserialize($recipe));
         }
     }
-    public function onDisable(){
-    
-    }
-    public function onJoin(PlayerJoinEvent $e) {
-        
-    }
+	
     public function onCommand(\pocketmine\command\CommandSender $player, \pocketmine\command\Command $c, string $l, array $a) : bool {
         if($player instanceof Player && $player->hasPermission("customcrafting.command")) {
 
@@ -68,15 +79,15 @@ class CustomCrafting extends PluginBase implements Listener {
                 }
             } else if($c->getName() == "customcrafts") {
                 $menu = InvMenu::create(InvMenu::TYPE_CHEST);
-                $g = Item::get(95);
+                $jason = Item::get(BlockIds::INVISIBLE_BEDROCK);
                 $a = Item::get(Item::AIR);
                 //1,2,3
                 //10, 11, 12
                 //19, 20, 21
                 $inv = [
-                    $g,$a,$a,$a,$g,$g,$g,$g,$g,
-                    $g,$a,$a,$a,$g,$g,$g,$a,$g,
-                    $g,$a,$a,$a,$g,$g,$g,$g,$g
+                    $jason,$a,$a,$a,$jason,$jason,$jason,$jason,$jason,
+                    $jason,$a,$a,$a,$jason,$jason,$jason,$a,$jason
+                    $jason,$a,$a,$a,$jason,$jason,$jason,$jason,$jason
                 ];
                 for($i = 0; $i < 27; $i++) {
                     $item = $inv[$i]; 
@@ -84,7 +95,7 @@ class CustomCrafting extends PluginBase implements Listener {
                 }
                 $menu->send($player);
                 $menu->setListener(function(InvMenuTransaction $transaction) : InvMenuTransactionResult{
-                    if($transaction->getItemClicked()->getId() == 95){
+                    if($transaction->getItemClicked()->getId() == BlockIds::INVISIBLEBEDROCK){
                         return $transaction->discard();
                     }
 
