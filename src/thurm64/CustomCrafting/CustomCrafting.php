@@ -86,7 +86,7 @@ class CustomCrafting extends PluginBase implements Listener {
                 //19, 20, 21
                 $inv = [
                     $jason,$a,$a,$a,$jason,$jason,$jason,$jason,$jason,
-                    $jason,$a,$a,$a,$jason,$jason,$jason,$a,$jason
+                    $jason,$a,$a,$a,$jason,$jason,$jason,$a,$jason,
                     $jason,$a,$a,$a,$jason,$jason,$jason,$jason,$jason
                 ];
                 for($i = 0; $i < 27; $i++) {
