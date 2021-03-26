@@ -26,7 +26,6 @@ use pocketmine\block\BlockIds;
 use pocketmine\item\Armor;
 use pocketmine\utils\Config;
 use pocketmine\Player;
-use pocketmine\
 use pocketmine\inventory\ShapedRecipe;
 use muqsit\invmenu\InvMenu;
 use muqsit\invmenu\InvMenuHandler;
