@@ -4,8 +4,7 @@ api: 3
 author: thurm64
 main: thurm64\CustomCrafting\CustomCrafting
 load: STARTUP
-virions: 
-  - "InvMenu"
+virions: ["InvMenu"]
 commands:
   customcrafts:
     description: "Open custom craft GUI"
