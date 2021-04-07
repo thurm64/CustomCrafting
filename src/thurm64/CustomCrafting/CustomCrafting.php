@@ -12,6 +12,7 @@ use pocketmine\event\Player\PlayerCommandPreprocessEvent;
 use pocketmine\item\Item;
 use pocketmine\block\BlockIds;
 use pocketmine\item\Armor;
+use pocketmine\utils\Color;
 use pocketmine\utils\Config;
 use pocketmine\Player;
 use pocketmine\inventory\ShapedRecipe;
