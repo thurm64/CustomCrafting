@@ -1,17 +1,5 @@
 <?php
-/*
-  _   _       _   _                                                        _ 
- | \ | |     | | (_)                                                      (_)
- |  \| | ___ | |_ _  ___ ___   _ __ ___   ___   ___  ___ _ __  _ __   __ _ _ 
- | . ` |/ _ \| __| |/ __/ _ \ | '_ ` _ \ / _ \ / __|/ _ \ '_ \| '_ \ / _` | |
- | |\  | (_) | |_| | (_|  __/ | | | | | |  __/ \__ \  __/ | | | |_) | (_| | |
- |_| \_|\___/ \__|_|\___\___| |_| |_| |_|\___| |___/\___|_| |_| .__/ \__,_|_|
-                                                              | |            
-                                                              |_|         
-							      
-							      
-							     if you read this without context i am so incredibly sorry
-							      */
+
 declare(strict_types=1);
 namespace thurm64\CustomCrafting;
 use pocketmine\item\enchantment\Enchantment;
@@ -42,6 +30,7 @@ class CustomCrafting extends PluginBase implements Listener {
         if(!InvMenuHandler::isRegistered()){
             InvMenuHandler::register($this);
         }
+	$this->myConfig = new Config($this->getDataFolder() . "config.yml", Config::YAML);
         foreach($this->myConfig->getAll() as $recipe){
             $this->getServer()->getCraftingManager()->registerRecipe(unserialize($recipe));
         }
