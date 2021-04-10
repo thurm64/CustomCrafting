@@ -1,4 +1,5 @@
 # CustomCrafting
+## NOTICE: I have recieved reports this is not compatible with the 1.16.220 protocol changes. I will be fixing this ASAP. Thank you for your understanding.
 ## What is it?
 This plugin has a graphical interface for creating crafting recipes. 
 You will need to restart the server for new recipes to take effect.
